@@ -74,21 +74,12 @@ function ContentModal({
                 {translating ? 'Translating...' : `Translate`}
               </button>
             </div>
-            {canSave && (
-              <button 
-                className="save-button modal-button"
-                onClick={() => onSave(title, displayContent, videoUrl)}
-                disabled={saving}
-              >
-                {saving ? 'Saving...' : 'Save'}
-              </button>
-            )}
             <button 
               className="download-button modal-button"
               onClick={() => onDownload(displayContent, title)}
               title="Download PDF"
             >
-              <span className="download-icon">⬇️</span>
+              PDF
             </button>
             <button className="close-button" onClick={onClose}>×</button>
           </div>

@@ -67,7 +67,13 @@ function YouTubeSearch({
 
   return (
     <div className="youtube-search-container">
-      <h2>Search YouTube Videos</h2>
+      <div className="welcome-section">
+        <img src="/ytimg.png" alt="YouTube Logo" />
+        <p className="welcome-text">
+          Analyse Your Search Videos In Seconds 
+          <span role="img" aria-label="rocket" style={{ marginLeft: '4px' }}>🚀</span>
+        </p>
+      </div>
       
       <form onSubmit={handleSearch} className="search-form">
         <input

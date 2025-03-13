@@ -38,7 +38,7 @@ function Header({ activeTab, setActiveTab }) {
   return (
     <header className="app-header">
       <div className="logo-container">
-        <h1>YouTube Summarizer</h1>
+        <h1>TranscriptAI</h1>
       </div>
       
       <nav className="main-nav">
@@ -67,7 +67,7 @@ function Header({ activeTab, setActiveTab }) {
                 className={activeTab === 'generator' ? 'active' : ''}
                 onClick={() => setActiveTab('generator')}
               >
-                Content Generator
+                Content Creation Studio
               </li>
             </>
           )}
