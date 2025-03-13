@@ -648,45 +648,37 @@ function AppContent({
               videoUrl={videoUrl}
               setVideoUrl={setVideoUrl}
               loading={loading}
+              hasTranscript={!!transcript}
+              onViewSummary={handleViewSummary}
+              onViewDetailedNotes={handleViewDetailedNotes}
+              onViewTranscript={handleViewTranscript}
             />
-
+            
             <ErrorDisplay error={error} />
             
             {processing && !isModalOpen && (
               <div className="loading-container">
                 <div className="loading-spinner"></div>
                 <p className="loading-text">Generating content, please wait...</p>
-            </div>
-          )}
+              </div>
+            )}
             
-            {transcript && (
-              <>
-                <ViewOptions 
-                  onViewSummary={handleViewSummary}
-                  onViewDetailedNotes={handleViewDetailedNotes}
-                  onViewTranscript={handleViewTranscript}
-                  hasTranscript={!!transcript}
-                  loading={processing}
-                />
-                
-                <ContentModal 
-                  isOpen={isModalOpen}
-                  onClose={handleCloseModal}
-                  title={modalTitle}
-                  content={modalContent}
-                  targetLanguage={targetLanguage}
-                  setTargetLanguage={setTargetLanguage}
-                  onTranslate={handleTranslate}
-                  translating={translating}
-                  translatedContent={translatedContent}
-                  onDownload={handleDownload}
-                  onSave={handleSaveTranscriptContent}
-                  canSave={!!user}
-                  saving={saving}
-                  videoUrl={videoUrl}
-                />
-        </>
-      )}
+            <ContentModal 
+              isOpen={isModalOpen}
+              onClose={handleCloseModal}
+              title={modalTitle}
+              content={modalContent}
+              targetLanguage={targetLanguage}
+              setTargetLanguage={setTargetLanguage}
+              onTranslate={handleTranslate}
+              translating={translating}
+              translatedContent={translatedContent}
+              onDownload={handleDownload}
+              onSave={handleSaveTranscriptContent}
+              canSave={!!user}
+              saving={saving}
+              videoUrl={videoUrl}
+            />
           </div>
         ) : activeTab === 'search' ? (
           <YouTubeSearch 
